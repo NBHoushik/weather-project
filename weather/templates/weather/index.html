@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Index-page</title>
+  {%load static%}
+  <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+  <form  method="post" action="{%url 'index'%}">
+    {%csrf_token%}
+    <label>Enter City</label>
+    <input type="text" name="city">
+    <button type="submit">Submit</button>
+  </form>
+  <h1>Weather Report</h1>
+  {%if weather_data%}
+  
+  <div> 
+    Date: {{current_date}}
+    Day:{{current_day}}
+  <table border="1px">
+    <tbody>
+      <thead>
+        <th>Tag</th>
+        <th>Data</th>
+      </thead>
+      <tr>
+        <td>
+          Location
+        <img src="https://th.bing.com/th/id/OIP.R_p8T4NGJdJa0-QnfVmRAAHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="error" width="30">
+        </td>
+        <td>{{weather_data.city}}</td>
+      </tr>
+      <tr>
+      <td>
+      Weather
+      {% if weather_data.weather == "clear sky" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Clear Sky" width="40">
+      {% elif weather_data.weather == "few clouds" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="Few Clouds" width="40">
+      {% elif weather_data.weather == "scattered clouds" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/414/414825.png" alt="Scattered Clouds" width="40">
+      {% elif weather_data.weather == "overcast clouds" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Overcast Clouds" width="40">
+      {% elif weather_data.weather == "light rain" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163626.png" alt="Light Rain" width="40">
+      {% elif weather_data.weather == "moderate rain" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163636.png" alt="Moderate Rain" width="40">
+      {% elif weather_data.weather == "heavy intensity rain" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/2413/2413024.png" alt="Heavy Rain" width="40">
+      {% elif weather_data.weather == "thunderstorm" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/1146/1146860.png" alt="Thunderstorm" width="40">
+      {% elif weather_data.weather == "snow" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/642/642102.png" alt="Snow" width="40">
+      {% elif weather_data.weather == "mist" %}
+        <img src="https://cdn-icons-png.flaticon.com/512/4005/4005901.png" alt="Mist" width="40">
+      {% else %}
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Default Weather" width="40">
+      {% endif %}
+      </td>
+      <td>
+        {{weather_data.weather}}
+      </td>
+      </tr>
+      <tr>
+        <td>
+          Wind-speed
+          <img src="https://static.vecteezy.com/system/resources/previews/017/444/153/non_2x/hand-drawn-wind-air-flow-icon-free-breath-symbol-fresh-air-flow-sign-doodle-wind-blow-icons-weather-symbol-climate-design-element-illustration-isolated-on-white-background-vector.jpg" alt="error" width="40">
+        </td>
+        <td>
+          {{weather_data.wind_speed}} m/s
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Temprature
+          <img src="https://cdn-icons-png.flaticon.com/512/3534/3534501.png" alt="error" width="40">
+        </td>
+        <td>
+          {{weather_data.temp}} °C
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Humidity
+          <img src="https://cdn-icons-png.flaticon.com/512/9361/9361596.png" alt="error" width="40">
+        </td>
+        <td>
+          {{weather_data.humidity}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {%endif%}
+  </div>
+  {%if message%}
+    <p>{{message}}</p>
+  {%endif%}
+</body>
+</html>
