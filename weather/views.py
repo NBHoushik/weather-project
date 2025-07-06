@@ -23,6 +23,7 @@ def index(request):
         "humidity":data["main"]["humidity"],
         "wind_speed":data["wind"]["speed"]
       }
+      weather_data["class"]=weather_data["weather"].replace(" ","-")
       return render(request,"weather/index.html",{"weather_data":weather_data,"current_day":current_day,"current_date":current_date})
     else:
       d="Enter valid city"

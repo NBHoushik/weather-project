@@ -5,7 +5,7 @@
   {%load static%}
   <link rel="stylesheet" href="{%static 'css/style.css'%}">
 </head>
-<body>
+<body class="{{weather_data.class}}">
   <form  method="post" action="{%url 'index'%}">
     {%csrf_token%}
     <label>Enter City</label>
@@ -14,10 +14,11 @@
   </form>
   <h1>Weather Report</h1>
   {%if weather_data%}
-  
-  <div> 
+  <div>
+    <p id="dd">
     Date: {{current_date}}
     Day:{{current_day}}
+    </p>  
   <table border="1px">
     <tbody>
       <thead>

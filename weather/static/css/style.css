@@ -1,12 +1,10 @@
-
 body {
-  font-family: Arial, sans-serif;
-  background: #fff8e1;
+  font-family: cursive;
   margin: 0;
   padding: 20px;
-  
+  background-size: cover;
+  background-image: url('https://cdn.pixabay.com/photo/2016/05/18/17/59/leaf-1401140_1280.jpg');
 }
-
 form {
   text-align: center;
   margin-bottom: 30px;
@@ -44,13 +42,12 @@ h1{
 }
 
 table {
-  width: 60%;
+  width: 50%;
   margin: auto;
   border-collapse: collapse;
-  background-color: #ffffffd9;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-family: cursive;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);  
 }
-
 thead th {
   background-color: #03a9f4;
   color: white;
@@ -58,27 +55,72 @@ thead th {
   text-align: left;
   font-size: 1.1rem;
 }
-
 td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
   vertical-align: middle;
   font-size: 1rem;
+  
 }
-
+#dd{
+  color: #ff416c;
+}
 img {
   vertical-align: middle;
   margin-right: 10px;
 }
-
 div {
   margin-top: 20px;
   text-align: center;
 }
-
 p {
   font-size: 1.2rem;
   color: red;
   text-align: center;
   font-weight: bold;
 }
+
+body.clear-sky {
+  background-image: url('https://cdn.pixabay.com/photo/2022/04/26/13/04/sky-7158340_1280.jpg');
+}
+
+body.few-clouds {
+  background-image: url('https://cdn.pixabay.com/photo/2017/06/18/12/45/sky-2415630_1280.jpg');
+}
+
+body.scattered-clouds {
+  background-image: url('https://cdn.pixabay.com/photo/2014/09/12/18/41/white-clouds-443166_1280.jpg');
+}
+
+body.overcast-clouds {
+  background-image: url('https://cdn.pixabay.com/photo/2018/05/13/10/13/sky-3395811_1280.jpg');
+}
+
+body.light-rain{
+  background-image: url('https://cdn.pixabay.com/photo/2019/07/12/07/23/raindrops-4332152_1280.jpg');
+}
+
+body.moderate-rain {
+  background-image: url('https://cdn.pixabay.com/photo/2019/07/12/07/23/raindrops-4332152_1280.jpg');
+}
+
+body.heavy-intensity-rain {
+  background-image: url('https://cdn.pixabay.com/photo/2019/05/28/03/23/thunderstorm-4234254_1280.jpg');
+}
+
+body.thunderstorm {
+  background-image: url('https://cdn.pixabay.com/photo/2014/07/23/02/41/lightning-399853_1280.jpg');
+}
+
+body.snow {
+  background-image: url('https://cdn.pixabay.com/photo/2022/12/10/11/05/snow-7646952_1280.jpg');
+}
+
+body.mist {
+  background-image: url('https://cdn.pixabay.com/photo/2020/10/12/14/11/meadow-5648849_1280.jpg');
+} 
+
+
+
+
+
